@@ -1,30 +1,56 @@
 import React, { Component } from 'react'
+import data from "../dillon-watch-history.json"
 require ('dotenv').config()
+
 
 export default class Main extends Component {
 
     componentDidMount() {
+        this.countChannelViews("JRE Clips")
+        this.listOfTopChannels()
+    }
 
-        fetch("https://covid-19-live-data.p.rapidapi.com/coronavirus/v1/current", {
-            "method": "GET",
-            "headers": {
-            "x-rapidapi-key": process.env.RAPID_KEY,
-            "x-rapidapi-host": "covid-19-live-data.p.rapidapi.com"
+    listOfTopChannels = () => {
+        let channels = {}
+        for (let i=0; i<data.length; i++) {
+            if (data[i]["subtitles"]) {
+                const channel = data[i]["subtitles"][0]["name"]
+                if (!channels[channel]) {
+                    channels[channel] = 1
+                } else {
+                    channels[channel]++
+                }
             }
-            })
-            .then(response => response.body)
-            .then(body => {
-                const reader = body.getReader();
-            })
-           
-    
+        }
+        let arrayOfChannels = []
+        for (let obj in channels) {
+            arrayOfChannels.push(obj, channels[obj])
+        }
+        
+       let sorted = arrayOfChannels.sort(function(a, b) {
+            return a > b ? -1 : 1
+        })
+        console.log(sorted)
     }
     
+    countChannelViews = (name) => {
+        let counter = 0
+        for (let i=0; i<data.length; i++) {
+            if (data[i]["subtitles"]) {
+                if (data[i]["subtitles"][0]["name"] == name) {
+                    counter++
+                }
+            } else {
+                continue
+            }
+        }
+        // console.log(counter)
+    }
 
     render() {
         return (
             <div>
-                <h1>{this.getTestData}</h1>
+               
             </div>
         )
     }
