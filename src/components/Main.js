@@ -24,13 +24,14 @@ export default class Main extends Component {
         }
         let arrayOfChannels = []
         for (let obj in channels) {
-            arrayOfChannels.push(obj, channels[obj])
+            arrayOfChannels.push([obj, channels[obj]])
         }
         
        let sorted = arrayOfChannels.sort(function(a, b) {
-            return a > b ? -1 : 1
+            return b[1] - a[1] 
         })
-        console.log(sorted)
+        // console.log(sorted)
+        // return sorted
     }
     
     countChannelViews = (name) => {
@@ -40,11 +41,9 @@ export default class Main extends Component {
                 if (data[i]["subtitles"][0]["name"] == name) {
                     counter++
                 }
-            } else {
-                continue
             }
         }
-        // console.log(counter)
+         console.log(counter)
     }
 
     render() {
