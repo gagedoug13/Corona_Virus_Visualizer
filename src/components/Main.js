@@ -51,31 +51,30 @@ export default class Main extends Component {
     }
 
     listOfTopKeywords = () => {
-        let channels = {}
+        console.log(data[0]["title"])
+        let keywords = {}
         for (let i=0; i<data.length; i++) {
-            if (data[i]["subtitles"]) {
-                const channel = data[i]["subtitles"][0]["name"].split(' ')
-                // console.log(channel)
-               for (let keyword of channel) {
-                   if (!channels[keyword]) {
-                       channels[keyword] = 1
+            if (data[i]["title"]) {
+                const title = data[i]["title"].split(' ').slice(1)
+               for (let word of title) {
+                   if (!keywords[word]) {
+                       keywords[word] = 1
                    } else {
-                       channels[keyword]++
+                       keywords[word]++
                    }
                }
             }
         }
-        // console.log(channels)
+
         let arrayOfKeywords = []
-        for (let obj in channels) {
-            arrayOfKeywords.push([obj, channels[obj]])
+        for (let obj in keywords) {
+            arrayOfKeywords.push([obj, keywords[obj]])
         }
         
        let sortedList = arrayOfKeywords.sort(function(a, b) {
             return b[1] - a[1] 
         })
         console.log(sortedList)
-
     }
 
     render() {
