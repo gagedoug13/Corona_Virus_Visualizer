@@ -1,9 +1,17 @@
 import React, { Component } from 'react'
 import data from "../dillon-watch-history.json"
+import Chart from "./Chart"
 require ('dotenv').config()
 
 
 export default class Main extends Component {
+
+    constructor(props){
+        super(props)
+            this.state = {
+                chartData: []
+        }
+    }
 
     componentDidMount() {
         this.countChannelViews("JRE Clips")
@@ -34,8 +42,15 @@ export default class Main extends Component {
        let sortedList = arrayOfChannels.sort(function(a, b) {
             return b[1] - a[1] 
         })
+
+        sortedList = sortedList.slice(0, 50)
+
+        this.setState({
+            chartData: sortedList
+        })
+        
         // console.log(sortedList)
-        // return sortedList
+        return sortedList
     }
     
     countChannelViews = (name) => {
@@ -74,13 +89,14 @@ export default class Main extends Component {
        let sortedList = arrayOfKeywords.sort(function(a, b) {
             return b[1] - a[1] 
         })
-        console.log(sortedList)
+        // console.log(sortedList)
     }
 
     render() {
+        // console.log(this.state.chartData)
         return (
-            <div>
-               
+            <div className='mainContainer'>
+                <Chart data={this.state.chartData}/>
             </div>
         )
     }

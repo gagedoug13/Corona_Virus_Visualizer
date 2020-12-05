@@ -1,0 +1,19 @@
+.mainContainer {
+    height: 95vh;
+    width: 98vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.chartContainer {
+    height: 80vh;
+    width: 75vw;
+    background-color: black;
+}
+
+.eachBar {
+    height: 1vh;
+    width: 10px;
+    background-color: pink;
+}
