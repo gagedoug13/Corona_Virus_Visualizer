@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import data from "../dillon-watch-history.json"
 import Chart from "./Chart"
+import VisualFilters from "./VisualFilters"
 require ('dotenv').config()
 
 
@@ -14,9 +15,9 @@ export default class Main extends Component {
     }
 
     componentDidMount() {
-        this.countChannelViews("JRE Clips")
-        this.listOfTopChannels()
-        this.listOfTopKeywords()
+        // this.countChannelViews("JRE Clips")
+        // this.listOfTopChannels()
+        // this.listOfTopKeywords()
         // console.log(data)
     }
 
@@ -89,7 +90,13 @@ export default class Main extends Component {
        let sortedList = arrayOfKeywords.sort(function(a, b) {
             return b[1] - a[1] 
         })
-        // console.log(sortedList)
+        
+        sortedList = sortedList.slice(0, 50)
+
+        this.setState({
+            chartData: sortedList
+        })
+        console.log(sortedList)
     }
 
     render() {
@@ -97,6 +104,8 @@ export default class Main extends Component {
         return (
             <div className='mainContainer'>
                 <Chart data={this.state.chartData}/>
+                <VisualFilters listOfTopChannels={this.listOfTopChannels}
+                               listOfTopKeywords={this.listOfTopKeywords}/>
             </div>
         )
     }
