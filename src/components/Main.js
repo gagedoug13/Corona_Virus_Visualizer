@@ -14,14 +14,6 @@ export default class Main extends Component {
         }
     }
 
-    componentDidMount() {
-        // this.countChannelViews("JRE Clips")
-        // this.listOfTopChannels()
-        // this.listOfTopKeywords()
-        // console.log(data)
-    }
-
-    
 
     listOfTopChannels = () => {
         let channels = {}
@@ -49,8 +41,6 @@ export default class Main extends Component {
         this.setState({
             chartData: sortedList
         })
-        
-        // console.log(sortedList)
         return sortedList
     }
     
@@ -63,11 +53,9 @@ export default class Main extends Component {
                 }
             }
         }
-        //  console.log(counter)
     }
 
     listOfTopKeywords = () => {
-        console.log(data[0]["title"])
         let keywords = {}
         for (let i=0; i<data.length; i++) {
             if (data[i]["title"]) {
@@ -96,11 +84,11 @@ export default class Main extends Component {
         this.setState({
             chartData: sortedList
         })
-        console.log(sortedList)
+        return sortedList
     }
+   
 
     render() {
-        // console.log(this.state.chartData)
         return (
             <div className='mainContainer'>
                 <Chart data={this.state.chartData}/>

@@ -17,5 +17,14 @@
 .eachBar {
     height: 50vh;
     width: 1vw;
-    background-color: pink;
+    background-color: lightblue;
+}
+
+.hide {
+    display: none;
+  }
+  
+.eachBar:hover + .hide {
+    display: block;
+    color: red;
 }
