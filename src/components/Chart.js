@@ -7,7 +7,9 @@ export default function Chart(props) {
         <div className="chartContainer">
             {props.data.map(x => {
             return (
-                <div key={x.id}>
+                <div className="eachBar"
+                     key={x.id}
+                     style={{height: `${x[1]}px`}}>
                     <Bar data={x}/> 
                 </div>
             )
@@ -17,3 +19,5 @@ export default function Chart(props) {
     )
     
 }
+
+// {height: `${x[1]}px`}

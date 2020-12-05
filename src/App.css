@@ -10,10 +10,12 @@
     height: 80vh;
     width: 75vw;
     background-color: black;
+    display: flex;
+    justify-content: space-evenly;
 }
 
 .eachBar {
-    height: 1vh;
-    width: 10px;
+    height: 50vh;
+    width: 1vw;
     background-color: pink;
 }
