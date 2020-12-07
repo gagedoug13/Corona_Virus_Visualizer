@@ -59,7 +59,7 @@ export default class Main extends Component {
         let keywords = {}
         for (let i=0; i<data.length; i++) {
             if (data[i]["title"]) {
-                const title = data[i]["title"].split(' ').slice(1)
+                const title = data[i]["title"].toLowerCase().split(' ')
                for (let word of title) {
                    if (!keywords[word]) {
                        keywords[word] = 1
@@ -84,7 +84,8 @@ export default class Main extends Component {
         this.setState({
             chartData: sortedList
         })
-        return sortedList
+        // console.log(sortedList)
+        // return sortedList
     }
    
 
