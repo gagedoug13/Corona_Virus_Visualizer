@@ -6,7 +6,7 @@ export default function Chart(props) {
     return (
         <div className="chartContainer">
             {props.data.map(x => {
-                console.log(x)
+                // console.log(x)
             return (
                 <div className="eachBar"
                      key={1}

@@ -57,15 +57,25 @@ export default class Main extends Component {
 
     listOfTopKeywords = () => {
         let keywords = {}
+        const uselessKeywords = ["watched", "-", "the", "that", "you", "i", "has", "my", "&", "of", "a", "to", "|", "with", "for", "and", "in", "on", "how", "is", "at"]
         for (let i=0; i<data.length; i++) {
             if (data[i]["title"]) {
                 const title = data[i]["title"].toLowerCase().split(' ')
                for (let word of title) {
-                   if (!keywords[word]) {
-                       keywords[word] = 1
-                   } else {
-                       keywords[word]++
+                   if (!uselessKeywords.includes(word)) {
+                        if (!keywords[word]) {
+                            keywords[word] = 1
+                        } else {
+                            keywords[word]++
+                        }
                    }
+                //    if (!keywords[word]) {
+                //         if (!uselessKeywords.includes(word)) {
+                //             keywords[word] = 1
+                //         }
+                //    } else {
+                //        keywords[word]++
+                //    }
                }
             }
         }
@@ -80,16 +90,22 @@ export default class Main extends Component {
         })
         
         sortedList = sortedList.slice(0, 50)
-
+        if (sortedList[0][1] > 600) {
+            sortedList = sortedList.map(x => {
+                x[1] = x[1] / 2
+                return x
+            }) 
+        }
         this.setState({
             chartData: sortedList
         })
-        // console.log(sortedList)
+        console.log(sortedList)
         // return sortedList
     }
    
 
     render() {
+        console.log("hello")
         return (
             <div className='mainContainer'>
                 <Chart data={this.state.chartData}/>
