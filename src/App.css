@@ -29,6 +29,10 @@
     color: red;
 }
 
+.popupCardData {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
 /* .popup {
     height: 50px;
     width: 1vw;

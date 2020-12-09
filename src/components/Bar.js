@@ -7,9 +7,10 @@ export default function Bar(props) {
         style={{
             height: "10vh",
             width: "20vw",
-            backgroundColor: "white",
+            backgroundColor: "purple",
+            color: "white",
             display: "none"
-        }}>{props.data}
+        }}><h2 className="popupCardData">{props.data}</h2>
        </div>
    )
 }

@@ -118,7 +118,7 @@ export default class Main extends Component {
     }
 
     render() {
-        // console.log("hello")
+        console.log(data)
         return (
             <div className='mainContainer'>
                 <Chart popup={this.popUpWindow}
