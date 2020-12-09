@@ -2,16 +2,20 @@ import React from 'react'
 import Bar from "./Bar"
 
 export default function Chart(props) {
-    
+    let counter = 0;
     return (
         <div className="chartContainer">
             {props.data.map(x => {
-                // console.log(x)
+                counter++
             return (
-                <div className="eachBar"
-                     key={1}
+                <div
+                    id={counter} 
+                    className="eachBar"
+                    onMouseOut={props.deletePopup}
+                     onMouseOver={props.popup}
+                     key={counter}
                      style={{height: `${x[1]}px`}}>
-                    <Bar data={x}/>   
+                    <Bar data={x} id={counter}/>   
                 </div>
             )
         })}

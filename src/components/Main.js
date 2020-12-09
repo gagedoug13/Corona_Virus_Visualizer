@@ -69,13 +69,6 @@ export default class Main extends Component {
                             keywords[word]++
                         }
                    }
-                //    if (!keywords[word]) {
-                //         if (!uselessKeywords.includes(word)) {
-                //             keywords[word] = 1
-                //         }
-                //    } else {
-                //        keywords[word]++
-                //    }
                }
             }
         }
@@ -102,13 +95,35 @@ export default class Main extends Component {
         console.log(sortedList)
         // return sortedList
     }
-   
+
+    popUpWindow = (event) => {
+        const popup = document.querySelector(`.popup${event.target.id}`)
+        const adjustedX = event.clientX + 20
+        const adjustedY = event.clientY - 60
+        popup.style.display = ""
+        popup.style.position = "absolute"
+       
+        popup.style.top = adjustedY + "px"
+        popup.style.left = adjustedX + "px"
+      
+    }
+    
+    deletePopUpWindow = (event) => {
+        const popup = document.querySelector(`.popup${event.target.id}`)
+        popup.style.display = "none"
+    }
+
+    getMouseLocation = () => {
+
+    }
 
     render() {
-        console.log("hello")
+        // console.log("hello")
         return (
             <div className='mainContainer'>
-                <Chart data={this.state.chartData}/>
+                <Chart popup={this.popUpWindow}
+                       data={this.state.chartData}
+                       deletePopup={this.deletePopUpWindow}/>
                 <VisualFilters listOfTopChannels={this.listOfTopChannels}
                                listOfTopKeywords={this.listOfTopKeywords}/>
             </div>
