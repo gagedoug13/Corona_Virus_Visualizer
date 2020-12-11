@@ -4,20 +4,23 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color:#282828;
 }
 
 .chartContainer {
     height: 80vh;
     width: 75vw;
-    background-color: black;
+    background-color: #202020;
     display: flex;
     justify-content: space-evenly;
+    border: 2px purple solid;
 }
 
 .eachBar {
     height: 50vh;
     width: 1vw;
-    background-color: lightblue;
+    background-color: #202020;
+    border: 1px purple solid;
 }
 
 .hide {
@@ -39,3 +42,11 @@
     background-color: red;
     /* display: none; */
 /* }  */
+.filterButton {
+    font-size: 5vh;
+    color: white;
+    background-color: #202020;
+}
+.filterButton:hover {
+    color: green;
+  }

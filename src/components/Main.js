@@ -83,12 +83,7 @@ export default class Main extends Component {
         })
         
         sortedList = sortedList.slice(0, 50)
-        if (sortedList[0][1] > 600) {
-            sortedList = sortedList.map(x => {
-                x[1] = x[1] / 2
-                return x
-            }) 
-        }
+       
         this.setState({
             chartData: sortedList
         })
