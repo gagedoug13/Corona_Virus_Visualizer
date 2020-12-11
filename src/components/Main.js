@@ -116,9 +116,14 @@ export default class Main extends Component {
         console.log(data)
         return (
             <div className='mainContainer'>
+                <h1 class="white-text">YouTube History Visualizer</h1>
+                
                 <Chart popup={this.popUpWindow}
                        data={this.state.chartData}
                        deletePopup={this.deletePopUpWindow}/>
+                
+                <h2 class="white-text">pick a filter to visualize your data.</h2>
+                
                 <VisualFilters listOfTopChannels={this.listOfTopChannels}
                                listOfTopKeywords={this.listOfTopKeywords}/>
             </div>

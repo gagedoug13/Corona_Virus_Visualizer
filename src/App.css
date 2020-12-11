@@ -1,19 +1,20 @@
 .mainContainer {
-    height: 95vh;
+    height: 100vh;
     width: 98vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    /* display: flex;
+    justify-content: center; */
+    /* align-items: center; */
     background-color:#282828;
 }
 
 .chartContainer {
-    height: 80vh;
+    height: 70vh;
     width: 75vw;
     background-color: #202020;
     display: flex;
     justify-content: space-evenly;
     border: 2px purple solid;
+    margin-left: 5px;
 }
 
 .eachBar {
@@ -46,7 +47,20 @@
     font-size: 5vh;
     color: white;
     background-color: #202020;
+    border: 1px white solid;
+    margin-left: 2vw;
 }
 .filterButton:hover {
-    color: green;
+    color: purple;
+    background-color: black;
   }
+
+.white-text {
+    color: white;
+    margin-left: 8px;
+}
+
+.barNumber {
+    font-size: 10px;
+    color: white;
+}

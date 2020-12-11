@@ -17,7 +17,8 @@ export default function Chart(props) {
                          onMouseOver={props.popup}
                          key={counter}
                          style={ {height: `${x[1] / 2}px`} }>
-                        <Bar data={x} id={counter}/>   
+                        <Bar data={x} id={counter}/>
+                        <p className="barNumber">{x[1]}</p>
                     </div>
                 )
             })}
@@ -36,7 +37,8 @@ export default function Chart(props) {
                              onMouseOver={props.popup}
                              key={counter}
                              style={ {height: `${x[1]}px`} }>
-                            <Bar data={x} id={counter}/>   
+                            <Bar data={x} id={counter}/>  
+                            <p className="barNumber">{x[1]}</p> 
                         </div>
                     )
                 })}
