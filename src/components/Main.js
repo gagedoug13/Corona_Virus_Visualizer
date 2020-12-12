@@ -13,18 +13,26 @@ export default class Main extends Component {
                 chartData: []
         }
     }
+
     videosPerMonth = () => {
 
         const monthValues = [null, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
         
         for (let i=0; i<data.length; i++) {
             const time = data[i]["time"]
+            const year = time.split('').slice(2,4).join('')
+            // console.log(year)
             if (time) {
-                let month = +time.split('').slice(5,7).join('')
-                monthValues[month]++
+                if (year == 20) {
+                    let month = +time.split('').slice(5,7).join('')
+                    monthValues[month]++
+                } else {
+                    continue
+                }
+                
             } 
         }
-        // console.log(monthValues)
+        console.log(monthValues)
     }
 
     listOfTopChannels = () => {
@@ -71,12 +79,18 @@ export default class Main extends Component {
         let keywords = {}
         const uselessKeywords = ["watched", "-", "the", "that", "you", "i", "has", "my", "&", "of", "a",
                                  "to", "|", "with", "for", "and", "in", "on", "how", "is", "at", "be",
-                                "by", "from", "this", "out", "his", "do"]
+                                "by", "from", "this", "out", "his", "do", "an", "it", "or", "get", "gets",
+                                "your", "1", "2", '""', "vs.", "he", "new", "they", "video", "been", 
+                                "what", "removed", "3"]
         for (let i=0; i<data.length; i++) {
             if (data[i]["title"]) {
                 const title = data[i]["title"].toLowerCase().split(' ')
+                
                for (let word of title) {
-                   if (!uselessKeywords.includes(word)) {
+                   if (word == "") {
+                       continue
+
+                   } else if (!uselessKeywords.includes(word)) {
                         if (!keywords[word]) {
                             keywords[word] = 1
                         } else {
@@ -101,13 +115,13 @@ export default class Main extends Component {
         this.setState({
             chartData: sortedList
         })
-        console.log(sortedList)
+        // console.log(sortedList)
         // return sortedList
     }
 
     popUpWindow = (event) => {
         const popup = document.querySelector(`.popup${event.target.id}`)
-        const adjustedX = event.clientX + 20
+        const adjustedX = event.clientX + 40
         const adjustedY = event.clientY - 60
         popup.style.display = ""
         popup.style.position = "absolute"
@@ -124,7 +138,7 @@ export default class Main extends Component {
 
 
     render() {
-        console.log(data)
+        // console.log(data)
         this.videosPerMonth()
         return (
             <div className='mainContainer'>
