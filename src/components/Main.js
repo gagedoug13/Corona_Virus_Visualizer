@@ -13,7 +13,19 @@ export default class Main extends Component {
                 chartData: []
         }
     }
+    videosPerMonth = () => {
 
+        const monthValues = [null, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        
+        for (let i=0; i<data.length; i++) {
+            const time = data[i]["time"]
+            if (time) {
+                let month = +time.split('').slice(5,7).join('')
+                monthValues[month]++
+            } 
+        }
+        // console.log(monthValues)
+    }
 
     listOfTopChannels = () => {
         let channels = {}
@@ -57,7 +69,9 @@ export default class Main extends Component {
 
     listOfTopKeywords = () => {
         let keywords = {}
-        const uselessKeywords = ["watched", "-", "the", "that", "you", "i", "has", "my", "&", "of", "a", "to", "|", "with", "for", "and", "in", "on", "how", "is", "at"]
+        const uselessKeywords = ["watched", "-", "the", "that", "you", "i", "has", "my", "&", "of", "a",
+                                 "to", "|", "with", "for", "and", "in", "on", "how", "is", "at", "be",
+                                "by", "from", "this", "out", "his", "do"]
         for (let i=0; i<data.length; i++) {
             if (data[i]["title"]) {
                 const title = data[i]["title"].toLowerCase().split(' ')
@@ -108,12 +122,10 @@ export default class Main extends Component {
         popup.style.display = "none"
     }
 
-    getMouseLocation = () => {
-
-    }
 
     render() {
         console.log(data)
+        this.videosPerMonth()
         return (
             <div className='mainContainer'>
                 <h1 class="white-text">YouTube History Visualizer</h1>
