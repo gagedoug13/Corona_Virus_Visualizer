@@ -29,10 +29,10 @@ export default class Main extends Component {
                 } else {
                     continue
                 }
-                
             } 
         }
-        console.log(monthValues)
+        console.log(monthValues.slice(1))
+        
     }
 
     listOfTopChannels = () => {
@@ -151,7 +151,8 @@ export default class Main extends Component {
                 <h2 class="white-text">pick a filter to visualize your data.</h2>
                 
                 <VisualFilters listOfTopChannels={this.listOfTopChannels}
-                               listOfTopKeywords={this.listOfTopKeywords}/>
+                               listOfTopKeywords={this.listOfTopKeywords}
+                               videosPerMonth={this.videosPerMonth}/>
             </div>
         )
     }
