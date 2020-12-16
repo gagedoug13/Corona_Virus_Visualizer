@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import data from "../dillon-watch-history.json"
 import Chart from "./Chart"
 import VisualFilters from "./VisualFilters"
+import MonthlyViewsGraph from "./MonthlyViewsGraph"
 require ('dotenv').config()
 
 
@@ -10,7 +11,8 @@ export default class Main extends Component {
     constructor(props){
         super(props)
             this.state = {
-                chartData: []
+                chartData: [],
+                viewsPerMonth: []
         }
     }
 
@@ -31,7 +33,10 @@ export default class Main extends Component {
                 }
             } 
         }
-        console.log(monthValues.slice(1))
+        let views = monthValues.slice(1)
+        this.setState({
+            viewsPerMonth: views
+        })
         
     }
 
@@ -138,21 +143,23 @@ export default class Main extends Component {
 
 
     render() {
-        // console.log(data)
-        this.videosPerMonth()
+        console.log(this.state.viewsPerMonth)
+        // this.videosPerMonth()
         return (
             <div className='mainContainer'>
-                <h1 class="white-text">YouTube History Visualizer</h1>
+                <h1 className="white-text">YouTube History Visualizer</h1>
                 
                 <Chart popup={this.popUpWindow}
                        data={this.state.chartData}
                        deletePopup={this.deletePopUpWindow}/>
                 
-                <h2 class="white-text">pick a filter to visualize your data.</h2>
+                <h2 className="white-text">pick a filter to visualize your data.</h2>
                 
                 <VisualFilters listOfTopChannels={this.listOfTopChannels}
                                listOfTopKeywords={this.listOfTopKeywords}
                                videosPerMonth={this.videosPerMonth}/>
+
+                <MonthlyViewsGraph views={this.state.viewsPerMonth}/>
             </div>
         )
     }
