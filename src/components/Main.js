@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import data from "../dillon-watch-history.json"
+import ChartContainer from "./ChartContainer"
 import Chart from "./Chart"
 import VisualFilters from "./VisualFilters"
 import MonthlyViewsGraph from "./MonthlyViewsGraph"
@@ -143,23 +144,15 @@ export default class Main extends Component {
 
 
     render() {
-        console.log(this.state.viewsPerMonth)
-        // this.videosPerMonth()
         return (
             <div className='mainContainer'>
-                <h1 className="white-text">YouTube History Visualizer</h1>
-                
-                <Chart popup={this.popUpWindow}
-                       data={this.state.chartData}
-                       deletePopup={this.deletePopUpWindow}/>
-                
-                <h2 className="white-text">pick a filter to visualize your data.</h2>
-                
-                <VisualFilters listOfTopChannels={this.listOfTopChannels}
+               <ChartContainer popup={this.popUpWindow}
+                               data={this.state.chartData}
+                               deletePopup={this.deletePopUpWindow}
+                               listOfTopChannels={this.listOfTopChannels}
                                listOfTopKeywords={this.listOfTopKeywords}
-                               videosPerMonth={this.videosPerMonth}/>
-
-                <MonthlyViewsGraph views={this.state.viewsPerMonth}/>
+                               videosPerMonth={this.videosPerMonth}
+                               views={this.state.viewsPerMonth}/>
             </div>
         )
     }
