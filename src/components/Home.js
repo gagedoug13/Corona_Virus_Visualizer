@@ -14,8 +14,8 @@ export default function Home() {
             </div>
 
             <div className='instructionsDiv'>
-                <p>how it works</p>
-                <h3>You download your raw YouTube data from google.takeouts.com and we 
+                <p className='howTitle'>how it works</p>
+                <h3 className='basicInstructions'>You download your raw YouTube data from google.takeouts.com and we 
                     visualize it for you. All you have to do is follow the instructions 
                     above and you'll be able to see your most viewed channels, videos, 
                     and key words from your YouTube history.</h3>
