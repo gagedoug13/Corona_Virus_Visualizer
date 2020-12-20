@@ -118,7 +118,7 @@
     text-align: center;
     margin-left: 25vw;
     margin-top: 9vh;
-    border: 2px black solid;
+    border: 1px black solid;
     background-color: #999999;
 }
 .instructionsDiv {
@@ -129,7 +129,7 @@
     height: 65vh;
     width: 100vw;
     background-color: #dadada;
-    border: 2px solid black;
+    border: 1px solid #202020;
     display: flex;
     align-items: center;
 }
@@ -138,9 +138,12 @@
     height: 55vh;
     margin-right: 3vw;
     margin-left: 2vw;
+    border: 1px blue solid;
 }
 
 .instructionsBody {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 4vh;
     width: 40vw;
     margin-left: 2vw;
 }

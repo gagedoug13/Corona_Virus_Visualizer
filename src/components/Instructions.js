@@ -5,7 +5,6 @@ import selectYoutube from '../instructionPhotos/select-youtube.png'
 import JSON from '../instructionPhotos/HTML-to-JSON.png'
 import createExport from '../instructionPhotos/create-export.png'
 import downloadYourFiles from '../instructionPhotos/download-your-files.png'
-import zipFile from '../instructionPhotos/zip-file.png'
 import extractAll from '../instructionPhotos/extract-all.png'
 
 export default function Instructions() {
@@ -48,15 +47,9 @@ export default function Instructions() {
 
             <div className='instructionsCard'>
                 <h2 className='instructionsBody'>Its time to upload your data. When choosing the file, go to Takeout / YouTube and YouTube Music / History / Watch History.</h2>
-                <img className='instructionsPhoto' src={zipFile}></img>
+                <img className='instructionsPhoto' src={extractAll}></img>
             </div>
 
-            <div className='instructionsCard'>
-                <h2 className='instructionsBody'>Select Watch History</h2>
-            </div>
-
-
-           
         </div>
     )
 }
