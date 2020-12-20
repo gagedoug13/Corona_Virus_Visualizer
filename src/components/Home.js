@@ -10,10 +10,10 @@ export default function Home() {
             <div className='fileInstructionsDiv'>
                 <button className='fileButton'>choose file</button>
                 <h3 className='or'>or</h3>
-                <button className='instructionsButton'>see instructions</button>
+                <button className='basicInstructionsButton'>see instructions</button>
             </div>
 
-            <div className='instructionsDiv'>
+            <div className='basicInstructionsDiv'>
                 <p className='howTitle'>how it works</p>
                 <h3 className='basicInstructions'>You download your raw <span style={{color: "red"}}>YouTube</span> data from google.takeouts.com and we 
                     visualize it for you. All you have to do is follow the instructions 

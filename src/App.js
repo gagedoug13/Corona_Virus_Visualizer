@@ -1,6 +1,7 @@
 import './App.css';
 import Main from './components/Main'
 import Home from './components/Home'
+import Instructions from './components/Instructions'
 
 
 function App() {
@@ -8,6 +9,7 @@ function App() {
   return (
     <div className="App">
      <Home />
+     <Instructions />
      <Main />
     </div>
   );

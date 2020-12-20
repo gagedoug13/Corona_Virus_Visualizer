@@ -84,13 +84,13 @@
     justify-content: center;
 }
 
-.instructionsDiv {
+.basicInstructionsDiv {
     height: 70vh;
     border: 2px solid black;
     background-color: #606060;
 }
 
-.fileButton, .instructionsButton {
+.fileButton, .basicInstructionsButton {
     height: 14vmin;
     width: 10vw;
     font-size: 28px;
@@ -120,4 +120,14 @@
     margin-top: 9vh;
     border: 2px black solid;
     background-color: #999999;
+}
+.instructionsDiv {
+    height: 170vh;
+    width: 100vw;
+}
+
+.instructionsCard {
+    height: 25vh;
+    width: 25vw;
+    border: 2px solid black;
 }
