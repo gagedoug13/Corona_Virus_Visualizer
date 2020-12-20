@@ -122,12 +122,25 @@
     background-color: #999999;
 }
 .instructionsDiv {
-    height: 170vh;
     width: 100vw;
 }
 
 .instructionsCard {
-    height: 25vh;
-    width: 25vw;
+    height: 65vh;
+    width: 100vw;
+    background-color: #dadada;
     border: 2px solid black;
+    display: flex;
+    align-items: center;
+}
+
+.instructionsPhoto {
+    height: 55vh;
+    margin-right: 3vw;
+    margin-left: 2vw;
+}
+
+.instructionsBody {
+    width: 40vw;
+    margin-left: 2vw;
 }
