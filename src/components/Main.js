@@ -14,12 +14,16 @@ export default class Main extends Component {
         super(props)
             this.state = {
                 chartData: [],
-                viewsPerMonth: []
+                viewsPerMonth: [],
+                topFiveChannels: [],
+                topFiveKeywords: []
         }
     }
 
     componentDidMount(){
-        this.getTopFiveVideos()
+        // this.getTopFiveVideos()
+        this.topFiveChannels()
+        this.topFiveKeywords()
     }
 
     videosPerMonth = () => {
@@ -127,7 +131,7 @@ export default class Main extends Component {
             chartData: sortedList
         })
         // console.log(sortedList)
-        // return sortedList
+        return sortedList
     }
 
     popUpWindow = (event) => {
@@ -148,7 +152,7 @@ export default class Main extends Component {
         popup.style.display = "none"
     }
 
-    getTopFiveVideos = () => {
+    topFiveVideos = () => {
         let titles = {}
         for (let i=0; i<data.length; i++) {
             const videoTitle = data[i]['title'].split('').slice(8).join('')
@@ -175,7 +179,21 @@ export default class Main extends Component {
         sortedList = sortedList.slice(0, 50)
 
         // console.log(sortedList)
-        console.log(data)
+        // console.log(data)
+    }
+
+    topFiveChannels = () => {
+        const topFive = this.listOfTopChannels(data).slice(0, 5)
+        this.setState({
+            topFiveChannels: topFive
+        })
+    }
+    
+    topFiveKeywords = () => {
+        const topFive = this.listOfTopKeywords(data).slice(0, 5)
+        this.setState({
+            topFiveKeywords: topFive
+        })
     }
 
 
@@ -189,7 +207,9 @@ export default class Main extends Component {
                                listOfTopKeywords={this.listOfTopKeywords}
                                videosPerMonth={this.videosPerMonth}
                                views={this.state.viewsPerMonth}/>
-                <DataFeed />
+
+                <DataFeed topFiveChannels={this.state.topFiveChannels}
+                          topFiveKeywords={this.state.topFiveKeywords}/>
                
             </div>
         )
