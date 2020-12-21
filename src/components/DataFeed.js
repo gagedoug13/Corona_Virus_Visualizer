@@ -24,6 +24,14 @@ export default function DataFeed(props) {
                     )
                 })}
             </div>
+
+            <div className='topMonthContainer'>
+                {props.topThreeMonths.map(x => {
+                    return (
+                        <p>{x[0]}: {x[1]} videos watched</p>
+                    )
+                })}
+            </div>
         </div>
     )
 }

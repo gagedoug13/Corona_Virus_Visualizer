@@ -16,24 +16,24 @@ export default class Main extends Component {
                 chartData: [],
                 viewsPerMonth: [],
                 topFiveChannels: [],
-                topFiveKeywords: []
+                topFiveKeywords: [],
+                topThreeMonths: []
         }
     }
 
     componentDidMount(){
-        // this.getTopFiveVideos()
         this.topFiveChannels()
         this.topFiveKeywords()
+        this.videosPerMonth()
     }
 
     videosPerMonth = () => {
-
+        const monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
         const monthValues = [null, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
         
         for (let i=0; i<data.length; i++) {
             const time = data[i]["time"]
             const year = time.split('').slice(2,4).join('')
-            // console.log(year)
             if (time) {
                 if (year == 20) {
                     let month = +time.split('').slice(5,7).join('')
@@ -44,8 +44,17 @@ export default class Main extends Component {
             } 
         }
         let views = monthValues.slice(1)
+        let monthlyViews = []
+
+        for (let i=0; i<views.length; i++) {
+            monthlyViews.push([monthNames[i], views[i]])
+        }
+       
+        let sortedMonths = monthlyViews.sort((a, b) => b[1] - a[1]).slice(0, 3)
+    
         this.setState({
-            viewsPerMonth: views
+            viewsPerMonth: views,
+            topThreeMonths: sortedMonths
         })
         
     }
@@ -130,7 +139,6 @@ export default class Main extends Component {
         this.setState({
             chartData: sortedList
         })
-        // console.log(sortedList)
         return sortedList
     }
 
@@ -156,7 +164,6 @@ export default class Main extends Component {
         let titles = {}
         for (let i=0; i<data.length; i++) {
             const videoTitle = data[i]['title'].split('').slice(8).join('')
-            // console.log(videoTitle)
             if (videoTitle) {
                 if (titles[videoTitle]) {
                     console.log("existing title")
@@ -178,8 +185,6 @@ export default class Main extends Component {
 
         sortedList = sortedList.slice(0, 50)
 
-        // console.log(sortedList)
-        // console.log(data)
     }
 
     topFiveChannels = () => {
@@ -197,7 +202,9 @@ export default class Main extends Component {
     }
 
 
+
     render() {
+
         return (
             <div className='mainContainer'>
                 <ChartContainer popup={this.popUpWindow}
@@ -209,7 +216,8 @@ export default class Main extends Component {
                                views={this.state.viewsPerMonth}/>
 
                 <DataFeed topFiveChannels={this.state.topFiveChannels}
-                          topFiveKeywords={this.state.topFiveKeywords}/>
+                          topFiveKeywords={this.state.topFiveKeywords}
+                          topThreeMonths={this.state.topThreeMonths}/>
                
             </div>
         )
