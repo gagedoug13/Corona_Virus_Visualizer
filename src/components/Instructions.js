@@ -11,17 +11,17 @@ export default function Instructions() {
     return (
         <div className='instructionsDiv'>
             <div className='instructionsCard'>
-                <h2 className='instructionsBody'>Step 1. go to <a href='https://takeout.google.com/'>takeout.google.com</a> to download your youtube history.</h2>
+                <h2 className='instructionsBody'>Step 1. go to <a target='_blank' href='https://takeout.google.com/'>takeout.google.com</a> to download your youtube history.</h2>
                 <img className='instructionsPhoto' src={googleTakeout}></img>
             </div>
 
             <div className='instructionsCard'>
-                <h2 className='instructionsBody'>Deselect all of the selected data and go to the bottom and hit the checkmark by the YouTube history icon.</h2>
+                <h2 className='instructionsBody'>Scroll down and hit deselect all to uncheck all of the chosen data. </h2>
                 <img className='instructionsPhoto' src={deselect}></img>
             </div>
 
             <div className='instructionsCard'>
-                <h2 className='instructionsBody'>At the bottom of the page, check the box next to YouTube data and click on Multiple Formats under the YouTube button.</h2>
+                <h2 className='instructionsBody'>Now go to the bottom and hit the checkmark next to the YouTube icon. Next, click on Multiple Formats under the YouTube button. </h2>
                 <img className='instructionsPhoto' src={selectYoutube}></img>
             </div>
 

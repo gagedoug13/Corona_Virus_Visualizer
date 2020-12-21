@@ -8,7 +8,7 @@ export default function ChartContainer(props) {
         <div>
             <h1 className="white-text">YouTube History Visualizer</h1>
                 
-                <Chart popup={props.popUpWindow}
+                <Chart popup={props.popUp}
                        data={props.data}
                        deletePopup={props.deletePopup}/>
                 

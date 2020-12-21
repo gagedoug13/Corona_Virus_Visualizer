@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
 import data from "../dillon-watch-history.json"
 import ChartContainer from "./ChartContainer"
-import Chart from "./Chart"
-import VisualFilters from "./VisualFilters"
-import MonthlyViewsGraph from "./MonthlyViewsGraph"
+// import Chart from "./Chart"
+// import VisualFilters from "./VisualFilters"
+// import MonthlyViewsGraph from "./MonthlyViewsGraph"
+import DataFeed from "./DataFeed"
 require ('dotenv').config()
 
 
@@ -15,6 +16,10 @@ export default class Main extends Component {
                 chartData: [],
                 viewsPerMonth: []
         }
+    }
+
+    componentDidMount(){
+        this.getTopFiveVideos()
     }
 
     videosPerMonth = () => {
@@ -126,6 +131,7 @@ export default class Main extends Component {
     }
 
     popUpWindow = (event) => {
+        console.log("popUpWindow")
         const popup = document.querySelector(`.popup${event.target.id}`)
         const adjustedX = event.clientX + 40
         const adjustedY = event.clientY - 60
@@ -142,17 +148,49 @@ export default class Main extends Component {
         popup.style.display = "none"
     }
 
+    getTopFiveVideos = () => {
+        let titles = {}
+        for (let i=0; i<data.length; i++) {
+            const videoTitle = data[i]['title'].split('').slice(8).join('')
+            // console.log(videoTitle)
+            if (videoTitle) {
+                if (titles[videoTitle]) {
+                    console.log("existing title")
+                    titles[videoTitle]++
+                } else {
+                    titles[videoTitle] = 0
+                }
+            }
+        }
+
+        let arrayOfTitles = []
+        for (let obj in titles) {
+            arrayOfTitles.push([obj, titles[obj]])
+        }
+        
+       let sortedList = arrayOfTitles.sort(function(a, b) {
+            return b[1] - a[1] 
+        })
+
+        sortedList = sortedList.slice(0, 50)
+
+        // console.log(sortedList)
+        console.log(data)
+    }
+
 
     render() {
         return (
             <div className='mainContainer'>
-               <ChartContainer popup={this.popUpWindow}
+                <ChartContainer popup={this.popUpWindow}
                                data={this.state.chartData}
                                deletePopup={this.deletePopUpWindow}
                                listOfTopChannels={this.listOfTopChannels}
                                listOfTopKeywords={this.listOfTopKeywords}
                                videosPerMonth={this.videosPerMonth}
                                views={this.state.viewsPerMonth}/>
+                <DataFeed />
+               
             </div>
         )
     }
