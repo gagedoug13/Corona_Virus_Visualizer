@@ -131,6 +131,7 @@
 .or {
     font-family: monospace;
     font-size: 4vh;
+    color: white;
     margin: 5vmin;
 }
 
@@ -188,5 +189,5 @@
 }
 
 .googleLink:hover {
-    color: green;
+    color: white;
 }

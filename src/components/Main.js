@@ -143,7 +143,6 @@ export default class Main extends Component {
     }
 
     popUpWindow = (event) => {
-        console.log("popUpWindow")
         const popup = document.querySelector(`.popup${event.target.id}`)
         const adjustedX = event.clientX + 40
         const adjustedY = event.clientY - 60
