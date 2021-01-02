@@ -206,6 +206,10 @@ export default class Main extends Component {
 
         return (
             <div className='mainContainer'>
+                <DataFeed topFiveChannels={this.state.topFiveChannels}
+                          topFiveKeywords={this.state.topFiveKeywords}
+                          topThreeMonths={this.state.topThreeMonths}/>
+
                 <ChartContainer popup={this.popUpWindow}
                                data={this.state.chartData}
                                deletePopup={this.deletePopUpWindow}
@@ -214,9 +218,7 @@ export default class Main extends Component {
                                videosPerMonth={this.videosPerMonth}
                                views={this.state.viewsPerMonth}/>
 
-                <DataFeed topFiveChannels={this.state.topFiveChannels}
-                          topFiveKeywords={this.state.topFiveKeywords}
-                          topThreeMonths={this.state.topThreeMonths}/>
+               
                
             </div>
         )
