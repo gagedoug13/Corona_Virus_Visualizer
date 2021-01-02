@@ -1,11 +1,13 @@
 import React from 'react'
 import ytLogo from '../logos/leafs.jpg'
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom"
-import Instructions from './Instructions'
+import { Link } from "react-router-dom"
+
 
 export default function Home() {
     return (
-            <div className='homeDiv' style={{backgroundImage: "url(" + ytLogo + ")"}}>
+       
+            
+            <div className='homeDiv' style={{backgroundImage: "url(" + ytLogo + ")"}}>          
                 <div className='welcomeDiv'>
                     <h1 className='welcome'>Welcome to YouTube Data Visualizer</h1>
                 </div>
@@ -13,9 +15,11 @@ export default function Home() {
                 <div className='fileInstructionsDiv'>
                     <button className='fileButton'>upload data</button>
                     <h3 className='or'>or</h3>
-                    <link to='/instructions'>
-                        <button className='basicInstructionsButton'>instructions</button>
-                    </link>
+                        <Link to='/instructions'>
+                            <button className='basicInstructionsButton'>instructions</button>
+                        </Link>
+                        
+                    
                     
                 </div>
 
@@ -28,7 +32,7 @@ export default function Home() {
                     above and you'll be able to see your most viewed channels, videos, 
                     and key words from your YouTube history.</h3>
                 </div>
+                
             </div>
-       
     )
 }
