@@ -13,7 +13,8 @@ export default function Home() {
                 </div>
 
                 <div className='fileInstructionsDiv'>
-                    <button className='fileButton'>upload data</button>
+                <input className='fileButton' type="file" id="myFile" name="filename"/>
+                    
                     <h3 className='or'>or</h3>
                         <Link to='/instructions'>
                             <button className='basicInstructionsButton'>instructions</button>

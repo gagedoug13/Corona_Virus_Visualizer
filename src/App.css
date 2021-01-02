@@ -191,3 +191,38 @@
 .googleLink:hover {
     color: white;
 }
+
+
+
+.backToHome {
+    font-size: 3vh;
+    border-color: black;
+    border-radius: 0;
+    color: purple;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    -webkit-transition: color 150ms ease-in-out;
+    transition: color 150ms ease-in-out;
+  }
+  .backToHome:after {
+    content: '';
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+    width: 0;
+    height: 100%;
+    background:purple;
+    z-index: -1;
+    -webkit-transition: width 150ms ease-in-out;
+    transition: width 150ms ease-in-out;
+  }
+  .backToHome:hover {
+    color: #fff;
+  }
+  .backToHome:hover:after {
+    width: 110%;
+  }

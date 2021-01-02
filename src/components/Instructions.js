@@ -6,10 +6,14 @@ import JSON from '../instructionPhotos/HTML-to-JSON.png'
 import createExport from '../instructionPhotos/create-export.png'
 import downloadYourFiles from '../instructionPhotos/download-your-files.png'
 import extractAll from '../instructionPhotos/extract-all.png'
+import { Link } from 'react-router-dom'
 
 export default function Instructions() {
     return (
         <div className='instructionsDiv'>
+            <Link to='/'>
+                    <button className='backToHome'>back to home</button>
+            </Link>
             <div className='instructionsCard'>
                 <h2 className='instructionsBody'>Step 1. go to <a target='_blank' href='https://takeout.google.com/'>takeout.google.com</a> to download your youtube history.</h2>
                 <img className='instructionsPhoto' src={googleTakeout}></img>
