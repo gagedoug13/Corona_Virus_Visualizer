@@ -6,7 +6,7 @@ export default function Chart(props) {
     if (props.data[0]) {
         if (props.data[0][1] > 600) {
             return (
-                <div className="chartContainer">
+                <div className="barChartContainer">
                 {props.data.map(x => {
                     counter++
                 return (

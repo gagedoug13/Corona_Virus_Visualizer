@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function Bar(props) {
     const id = props.id
-   return (
+   return (   
        <div 
         key={id} 
         className={`popup${id}`} 

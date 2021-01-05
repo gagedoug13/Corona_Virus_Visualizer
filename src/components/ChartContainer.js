@@ -5,7 +5,7 @@ import MonthlyViewsGraph from './MonthlyViewsGraph'
 
 export default function ChartContainer(props) {
     return (
-        <div>
+        <div className="chartDiv">
             <h1 className="white-text">YouTube History Visualizer</h1>
                 
                 <Chart popup={props.popup}

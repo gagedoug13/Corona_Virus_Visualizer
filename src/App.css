@@ -7,7 +7,7 @@
     background-color:#282828;
 }
 
-.chartContainer {
+.barChartContainer {
     height: 70vh;
     width: 75vw;
     background-color: #202020;
@@ -231,4 +231,9 @@
     height: 30vh;
     border: 2px black solid;
     width: 60vw;
+}
+
+.chartDiv {
+    height: 170vh;
+    background-color: black;
 }
