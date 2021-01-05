@@ -10,6 +10,7 @@ export default function DataFeed(props) {
             </div>
 
             <div className='topChannelsContainer'>
+                <h2>Top Channels</h2>
                 {props.topFiveChannels.map(x => {
                     return (
                         <p>{x[0]}</p>
@@ -18,6 +19,7 @@ export default function DataFeed(props) {
             </div>
 
             <div className='topKeywordsContainer'>
+                <h2>Top Keywords</h2>
                 {props.topFiveKeywords.map(x => {
                     return (
                         <p>{x[0]}</p>
@@ -25,7 +27,8 @@ export default function DataFeed(props) {
                 })}
             </div>
 
-            <div className='topMonthContainer'>
+            <div className='topMonthsContainer'>
+                <h2>Top Months</h2>
                 {props.topThreeMonths.map(x => {
                     return (
                         <p>{x[0]}: {x[1]} videos watched</p>

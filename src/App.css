@@ -139,7 +139,7 @@
     text-align: center;
     font-family: monospace;
     font-size: 6vh;
-    color: green;
+    color: lime;
 }
 
 .basicInstructions {
@@ -226,3 +226,9 @@
   .backToHome:hover:after {
     width: 110%;
   }
+
+.topChannelsContainer, .topKeywordsContainer, .topMonthsContainer {
+    height: 30vh;
+    border: 2px black solid;
+    width: 60vw;
+}
