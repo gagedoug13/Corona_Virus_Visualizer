@@ -8,17 +8,17 @@ export default function ChartContainer(props) {
         <div className="chartDiv">
             <h1 className="white-text">YouTube History Visualizer</h1>
                 
-                <Chart popup={props.popup}
-                       data={props.data}
-                       deletePopup={props.deletePopup}/>
+            <Chart popup={props.popup}
+                    data={props.data}
+                    deletePopup={props.deletePopup}/>
                 
-                <h2 className="white-text">pick a filter to visualize your data.</h2>
+            <h2 className="white-text">pick a filter to visualize your data.</h2>
                 
-                <VisualFilters listOfTopChannels={props.listOfTopChannels}
-                               listOfTopKeywords={props.listOfTopKeywords}
-                               videosPerMonth={props.videosPerMonth}/>
-
-                <MonthlyViewsGraph views={props.views}/>
+            <VisualFilters listOfTopChannels={props.listOfTopChannels}
+                            listOfTopKeywords={props.listOfTopKeywords}
+                            videosPerMonth={props.videosPerMonth}/>
+            
+            <div className="monthlyViewsContainer"><MonthlyViewsGraph views={props.views}/></div>
         </div>
     )
 }
