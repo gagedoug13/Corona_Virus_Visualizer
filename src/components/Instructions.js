@@ -53,6 +53,9 @@ export default function Instructions() {
                 <h2 className='instructionsBody'>Its time to upload your data. When choosing the file, go to Takeout / YouTube and YouTube Music / History / Watch History.</h2>
                 <img className='instructionsPhoto' src={extractAll}></img>
             </div>
+            <Link to='/'>
+                    <button className='backToHome'>back to home</button>
+            </Link>
 
         </div>
     )

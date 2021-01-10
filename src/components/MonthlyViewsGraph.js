@@ -17,7 +17,7 @@ export default function MonthlyViewsGraph(props) {
                 
                 <p className='hide'>{counter++}</p>
                 </div>
-                {x}
+                {x} videos
             </div>   
         )
     })
