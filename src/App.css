@@ -28,10 +28,10 @@
     display: none;
   }
   
-.eachBar:hover + .hide {
+/* .eachBar:hover + .hide {
     display: block;
     color: red;
-}
+} */
 
 .popupCardData {
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
@@ -43,6 +43,7 @@
     background-color: red;
     /* display: none; */
 /* }  */
+
 .filterButton {
     font-size: 5vh;
     color: white;
@@ -53,7 +54,8 @@
 .filterButton:hover {
     color: purple;
     background-color: black;
-  }
+}
+
 
 .white-text {
     color: white;

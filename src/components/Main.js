@@ -23,8 +23,8 @@ export default class Main extends Component {
 
     componentDidMount(){
         this.topFiveChannels()
-        this.topFiveKeywords()
-        this.videosPerMonth()
+        // this.topFiveKeywords()
+        // this.videosPerMonth()
     }
 
     videosPerMonth = () => {
@@ -143,7 +143,7 @@ export default class Main extends Component {
     }
 
     popUpWindow = (event) => {
-        const popup = document.querySelector(`.popup${event.target.id}`)
+        let popup = document.querySelector(`.popup${event.target.id}`)
         const adjustedX = event.clientX + 40
         const adjustedY = event.clientY - 60
         popup.style.display = ""
@@ -151,10 +151,11 @@ export default class Main extends Component {
        
         popup.style.top = adjustedY + "px"
         popup.style.left = adjustedX + "px"
+
     }
     
     deletePopUpWindow = (event) => {
-        const popup = document.querySelector(`.popup${event.target.id}`)
+        let popup = document.querySelector(`.popup${event.target.id}`)
         popup.style.display = "none"
     }
 

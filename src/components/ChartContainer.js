@@ -16,7 +16,7 @@ export default function ChartContainer(props) {
                 
             <VisualFilters listOfTopChannels={props.listOfTopChannels}
                             listOfTopKeywords={props.listOfTopKeywords}
-                            videosPerMonth={props.videosPerMonth}/>
+                           />
             
             <div className="monthlyViewsContainer"><MonthlyViewsGraph views={props.views}/></div>
         </div>
