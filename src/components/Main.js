@@ -154,7 +154,7 @@ export default class Main extends Component {
             popup.style.top = adjustedY + "px"
             popup.style.left = adjustedX + "px"
         } 
-        
+
     }
     
     deletePopUpWindow = (event) => {
@@ -212,9 +212,9 @@ export default class Main extends Component {
 
         return (
             <div className='mainContainer'>
-                {/* <DataFeed topFiveChannels={this.state.topFiveChannels}
+                <DataFeed topFiveChannels={this.state.topFiveChannels}
                           topFiveKeywords={this.state.topFiveKeywords}
-                          topThreeMonths={this.state.topThreeMonths}/> */}
+                          topThreeMonths={this.state.topThreeMonths}/>
 
                 <ChartContainer popup={this.popUpWindow}
                                data={this.state.chartData}
