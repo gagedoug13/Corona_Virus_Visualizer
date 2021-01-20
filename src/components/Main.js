@@ -144,19 +144,25 @@ export default class Main extends Component {
 
     popUpWindow = (event) => {
         let popup = document.querySelector(`.popup${event.target.id}`)
-        const adjustedX = event.clientX + 40
-        const adjustedY = event.clientY - 60
-        popup.style.display = ""
-        popup.style.position = "absolute"
-       
-        popup.style.top = adjustedY + "px"
-        popup.style.left = adjustedX + "px"
 
+        if (popup) {
+            const adjustedX = event.clientX + 40
+            const adjustedY = event.clientY - 60
+            popup.style.display = ""
+            popup.style.position = "absolute"
+           
+            popup.style.top = adjustedY + "px"
+            popup.style.left = adjustedX + "px"
+        } 
+        
     }
     
     deletePopUpWindow = (event) => {
         let popup = document.querySelector(`.popup${event.target.id}`)
-        popup.style.display = "none"
+        if (popup) {
+            popup.style.display = "none"
+        }
+       
     }
 
     topFiveVideos = () => {
