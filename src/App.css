@@ -38,11 +38,11 @@
 }
 
 /* .popup {
-    height: 50px;
+     height: 50px;
     width: 1vw;
-    background-color: red;
-    /* display: none; */
-/* }  */
+    background-color: red; 
+    position: relative;
+} */
 
 .filterButton {
     font-size: 5vh;
