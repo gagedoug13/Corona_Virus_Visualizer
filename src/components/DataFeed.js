@@ -17,7 +17,7 @@ export default function DataFeed(props) {
                     )
                 })}
             </div>
-
+                {console.log(props.topFiveKeywords)}
             <div className='topKeywordsContainer'>
                 <h2>Top Keywords</h2>
                 {props.topFiveKeywords.map(x => {

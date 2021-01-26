@@ -23,8 +23,8 @@ export default class Main extends Component {
 
     componentDidMount(){
         this.topFiveChannels()
-        // this.topFiveKeywords()
-        // this.videosPerMonth()
+        this.topFiveKeywords()
+        this.videosPerMonth()
     }
 
     videosPerMonth = () => {
