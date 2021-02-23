@@ -56,7 +56,6 @@ export default function Instructions() {
             <Link to='/'>
                     <button className='backToHome'>back to home</button>
             </Link>
-
         </div>
     )
 }

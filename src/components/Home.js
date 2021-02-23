@@ -19,9 +19,6 @@ export default function Home() {
                         <Link to='/instructions'>
                             <button className='basicInstructionsButton'>instructions</button>
                         </Link>
-                        
-                    
-                    
                 </div>
 
                 <div className='basicInstructionsDiv'>

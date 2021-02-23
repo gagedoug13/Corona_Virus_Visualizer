@@ -224,8 +224,6 @@ export default class Main extends Component {
                                videosPerMonth={this.videosPerMonth}
                                views={this.state.viewsPerMonth}/>
 
-               
-               
             </div>
         )
     }
