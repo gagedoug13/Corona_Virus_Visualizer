@@ -136,13 +136,12 @@ export default class Main extends Component {
         let popup = document.querySelector(`.popup${event.target.id}`)
 
         if (popup) {
-            const adjustedX = event.clientX + 40
-            const adjustedY = event.clientY - 60
             popup.style.display = ""
-            popup.style.position = "absolute"
+            popup.style.position = "relative"
+            popup.style.width = "6vw"
            
-            popup.style.top = adjustedY + "px"
-            popup.style.left = adjustedX + "px"
+            popup.style.top = -10 + "px"
+            popup.style.left = 18 + "px"
         } 
 
     }

@@ -18,7 +18,7 @@ export default function Chart(props) {
                         key={counter}
                         style={ {height: `${x[1] / 2}px`} }>
                         <Bar data={x} id={counter}/>
-                        <p className="barNumber">{x[1]}</p>
+                        {/* <p className="barNumber">{x[1]}</p> */}
                     </div>
                 )
             })}
