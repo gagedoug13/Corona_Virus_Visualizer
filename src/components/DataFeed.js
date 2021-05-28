@@ -1,7 +1,8 @@
 import React from 'react'
 
-export default function DataFeed(props) {
-   
+export default function DataFeed({ topFiveChannels,
+                                topFiveKeywords, 
+                                topThreeMonths }) {
     
     return (
         <div className="dataFeedDiv">
@@ -11,16 +12,16 @@ export default function DataFeed(props) {
 
             <div className='topChannelsContainer'>
                 <h2>Top Channels</h2>
-                {props.topFiveChannels.map(x => {
+                {topFiveChannels.map(x => {
                     return (
                         <p>{x[0]}</p>
                     )
                 })}
             </div>
-                {console.log(props.topFiveKeywords)}
+                {console.log(topFiveKeywords)}
             <div className='topKeywordsContainer'>
                 <h2>Top Keywords</h2>
-                {props.topFiveKeywords.map(x => {
+                {topFiveKeywords.map(x => {
                     return (
                         <p>{x[0]}</p>
                     )
@@ -29,7 +30,7 @@ export default function DataFeed(props) {
 
             <div className='topMonthsContainer'>
                 <h2>Top Months</h2>
-                {props.topThreeMonths.map(x => {
+                {topThreeMonths.map(x => {
                     return (
                         <p>{x[0]}: {x[1]} videos watched</p>
                     )

@@ -5,9 +5,8 @@ import { Link } from "react-router-dom"
 
 export default function Home() {
     return (
-       
-            
-            <div className='homeDiv' style={{backgroundImage: "url(" + ytLogo + ")"}}>          
+            <div className='homeDiv' style={{backgroundImage: "url(" + ytLogo + ")"}}> 
+                    
                 <div className='welcomeDiv'>
                     <h1 className='welcome'>Welcome to YouTube Data Visualizer</h1>
                 </div>

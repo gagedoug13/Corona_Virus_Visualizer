@@ -87,17 +87,7 @@ export default class Main extends Component {
         })
         return sortedList
     }
-    
-    countChannelViews = (name) => {
-        let counter = 0
-        for (let i=0; i<data.length; i++) {
-            if (data[i]["subtitles"]) {
-                if (data[i]["subtitles"][0]["name"] == name) {
-                    counter++
-                }
-            }
-        }
-    }
+
 
     listOfTopKeywords = () => {
         let keywords = {}
@@ -171,7 +161,6 @@ export default class Main extends Component {
             const videoTitle = data[i]['title'].split('').slice(8).join('')
             if (videoTitle) {
                 if (titles[videoTitle]) {
-                    console.log("existing title")
                     titles[videoTitle]++
                 } else {
                     titles[videoTitle] = 0
@@ -201,21 +190,15 @@ export default class Main extends Component {
     
     topFiveKeywords = () => {
         const topFive = this.listOfTopKeywords(data).slice(0, 5)
+
         this.setState({
             topFiveKeywords: topFive
         })
     }
 
-
-
     render() {
-
         return (
             <div className='mainContainer'>
-                <DataFeed topFiveChannels={this.state.topFiveChannels}
-                          topFiveKeywords={this.state.topFiveKeywords}
-                          topThreeMonths={this.state.topThreeMonths}/>
-
                 <ChartContainer popup={this.popUpWindow}
                                data={this.state.chartData}
                                deletePopup={this.deletePopUpWindow}
@@ -224,6 +207,9 @@ export default class Main extends Component {
                                videosPerMonth={this.videosPerMonth}
                                views={this.state.viewsPerMonth}/>
 
+                <DataFeed topFiveChannels={this.state.topFiveChannels}
+                          topFiveKeywords={this.state.topFiveKeywords}
+                          topThreeMonths={this.state.topThreeMonths}/>
             </div>
         )
     }
