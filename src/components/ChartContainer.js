@@ -3,13 +3,15 @@ import Chart from './Chart'
 import VisualFilters from "./VisualFilters"
 import MonthlyViewsGraph from './MonthlyViewsGraph'
 
-export default function ChartContainer({ popup, 
-                                        data, 
-                                        deletePopup, 
-                                        listOfTopChannels, 
-                                        listOfTopKeywords, 
-                                        videosPerMonth, 
-                                        views }) {
+export default function ChartContainer({ 
+    popup, 
+    data, 
+    deletePopup, 
+    listOfTopChannels, 
+    listOfTopKeywords, 
+    videosPerMonth, 
+    views 
+}) {
     return (
         <div className="chartDiv">
             <h1 className="white-text">YouTube History Visualizer</h1>

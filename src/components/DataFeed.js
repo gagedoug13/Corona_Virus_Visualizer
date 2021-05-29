@@ -1,8 +1,10 @@
 import React from 'react'
 
-export default function DataFeed({ topFiveChannels,
-                                topFiveKeywords, 
-                                topThreeMonths }) {
+export default function DataFeed({ 
+    topFiveChannels,
+    topFiveKeywords, 
+    topThreeMonths 
+}) {
     
     return (
         <div className="dataFeedDiv">
