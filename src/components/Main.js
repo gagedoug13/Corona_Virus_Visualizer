@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { useLocation } from 'react-router'
 import data from "../dillon-watch-history.json"
 import ChartContainer from "./ChartContainer"
 // import Chart from "./Chart"
@@ -9,7 +10,7 @@ require ('dotenv').config()
 
 
 export default class Main extends Component {
-
+    
     constructor(props){
         super(props)
             this.state = {
@@ -20,7 +21,7 @@ export default class Main extends Component {
                 topThreeMonths: []
         }
     }
-
+    
     componentDidMount(){
         this.topFiveChannels()
         this.topFiveKeywords()
@@ -196,6 +197,7 @@ export default class Main extends Component {
     }
 
     render() {
+        // console.log(location.state)
         return (
             <div className='mainContainer'>
                 <ChartContainer popup={this.popUpWindow}

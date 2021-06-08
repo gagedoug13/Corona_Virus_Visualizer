@@ -4,6 +4,41 @@ import { Link } from "react-router-dom"
 
 
 export default function Home() {
+    let fileReader;
+    let fileData = null;
+
+    // const checkFile = (event) => {
+    //     const file = document.getElementById('myFile').files[0]
+    //     console.log(event.target)
+    //     // var data = open(file)
+        // if (file.type != "application/json") {
+        //     alert("Please choose the json file from your watch history.")
+        // } else {
+            
+        // }
+    // }
+
+    const handleFileChosen = (file) => {
+        
+        if (file.type != "application/json") {
+            alert("Please choose the json file from your watch history.")
+            file = null;
+            return;
+        } else {
+            fileReader = new FileReader();
+            fileReader.onloadend = handleFileRead;
+            fileReader.readAsText(file);
+        }
+        // console.log(file)
+        
+      };
+
+    const handleFileRead = (e) => {
+        const content = fileReader.result;
+        fileData = content;
+        // console.log(fileData)
+        // … do something with the 'content' …
+    };
     return (
             <div className='homeDiv' style={{backgroundImage: "url(" + ytLogo + ")"}}> 
                     
@@ -12,7 +47,20 @@ export default function Home() {
                 </div>
 
                 <div className='fileInstructionsDiv'>
-                <input className='fileButton' type="file" id="myFile" name="filename"/>
+                <input 
+                    className='fileButton' 
+                    onChange={e => handleFileChosen(e.target.files[0])} 
+                    type="file" 
+                    accept='.json' 
+                    id="myFile" 
+                    name="filename"
+                />
+                <Link to={{ 
+                    pathname: "/main", 
+                    state: {fileData} 
+                }}>
+                    <button className='checkFileButton' ></button>
+                </Link>
                     
                     <h3 className='or'>or</h3>
                         <Link to='/instructions'>
